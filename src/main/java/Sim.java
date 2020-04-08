@@ -1,7 +1,5 @@
 import pop.Population;
 
-import javax.swing.*;
-
 public class Sim {
 
     public static void main(String[] args) {

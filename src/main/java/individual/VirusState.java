@@ -1,9 +1,5 @@
 package individual;
-
-
 import pop.Population;
-
-import java.util.Random;
 
 public enum VirusState {
     SUSCEPTIBLE,
