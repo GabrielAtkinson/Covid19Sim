@@ -1,7 +1,7 @@
 # Covid-19 Simulation
 #### Simulate the future growth of Covid-19
 
-##Simulation Model Design
+## Simulation Model Design
 This simulation is an agent (potential carriers of the disease) based SIR simulation, agents can transition from states
 for states 'Susceptible' -> 'Infected' -> 'Removed'. There are a couple of assumptions made immediately with this type
 of model:
@@ -25,7 +25,7 @@ will attempt to expose a randomly selected agent from the community.
 - isolation groups are subsets of communities 
 - no two communities are or isolation groups are identical
 
-##Parameters
+## Parameters
 
 1. G0 base growth rate such that Cases<sub>t+n</sub> = Cases<sub>t</sub> G0<sup>n</sup>
 2. Isolation Group Size
@@ -53,7 +53,7 @@ in first few simulated days. It will be important to tune this further.
 
 ## An Interpretation
 
-#References
+# References
 1. Du Z, Xu X, Wu Y, Wang L, Cowling BJ, Ancel Meyers L (2020). Serial interval of COVID-19 among publicly reported 
 confirmed cases. *Emerg Infect Dis, CDC*. 26(6). doi:10.3201/eid2606.200357. 
 2. Lauer SA, Grantz KH, et al. (2020), The Incubation Period of Coronavirus Disease 2019 (COVID-19) From Publicly 
