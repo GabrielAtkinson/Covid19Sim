@@ -47,7 +47,7 @@ public class Population {
         this(days, popSize, G0, Y, Ysd, S, Ssd, totalInfectedInit, removedInit, false);
         COMM_SIZE = commSize;
         IND_COMM_SIZE = outerCommSize;
-        PROB_OUT = removedInit;
+        PROB_OUT = outerCommProb;
     }
 
     public Population(int days, int popSize, double G0, double Y, double Ysd, double S, double Ssd, int totalInfectedInit,
@@ -60,7 +60,7 @@ public class Population {
         if (setFinal){
             COMM_SIZE = 4;
             IND_COMM_SIZE = 1000;
-            PROB_OUT = 0.07;
+            PROB_OUT = 0.05;
         }
         this.Y = new double[]{Y, Ysd};
         this.S = new double[]{S, Ssd};
@@ -143,8 +143,8 @@ public class Population {
 
         activeCases[day] = (int)Arrays.stream(pop).filter(Agent::isInfected).count();
         totalInfections[day] = (int)Arrays.stream(pop).filter(Agent::notSusceptible).count();
-        G[day] = (double)totalInfections[day]/totalInfections[day - 1];
-        R[day] = Math.pow((double)totalInfections[day]/totalInfections[day - 1], D[0]);
+        G[day] = (double)activeCases[day]/activeCases[day - 1];
+        R[day] = Math.pow((double)activeCases[day]/activeCases[day - 1], D[0]);
 
         printDay();
         day++;

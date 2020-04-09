@@ -20,7 +20,7 @@ model.
 
 A 'tiered community' is a subset of the general population of a certain size with varying likelihoods of exposure
 to different agents. The model currently has two tiers: isolation group (default: 4) and community (default: 1000), and 
-infected agent will infect/expose an agent strictly in their isolation group with a probability of 93% otherwise they
+infected agent will infect/expose an agent strictly in their isolation group with a probability of 95% otherwise they
 will attempt to expose a randomly selected agent from the community.
 - isolation groups are subsets of communities 
 - no two communities are or isolation groups are identical
@@ -43,7 +43,15 @@ will attempt to expose a randomly selected agent from the community.
 3. Initial total cases
 4. Initial removed cases
 
-##Interpretation
+## Points of research
+1. Representing actual exposure to different groups: what is the actual probability of containing infections within an
+isolation group or a community.
+2. Proportion of actual infections. The data we are using now is only based on confirmed cases and thus might be estimating
+a worst case scenario. What is the most likely proportion of actual cases to confirmed cases?
+3. The assumption of 100% pre-symptomatic infectiousness is strong and has resulted in high divergence from R<sub>0</sub>
+in first few simulated days. It will be important to tune this further.
+
+## An Interpretation
 
 #References
 1. Du Z, Xu X, Wu Y, Wang L, Cowling BJ, Ancel Meyers L (2020). Serial interval of COVID-19 among publicly reported 

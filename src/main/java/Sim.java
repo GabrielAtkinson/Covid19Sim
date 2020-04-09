@@ -11,7 +11,7 @@ public class Sim {
         double Ym = 5.8; // Incubation Duration mean
         double Ysd = 2.8; // Incubation Duration standard dev
         double Sm = 3.4; // Symptom Onset To Isolation Duration mean
-        double Ssd = 2.4; // Symptom Onset To Isolation Duration standard dev
+        double Ssd = 2.4; // Symptom Onset To Isolation Duration standard
         int n = 0;
         int r = 0;
 
