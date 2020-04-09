@@ -20,9 +20,9 @@ import java.util.*;
 import java.util.List;
 
 public class Population {
-    static final int COMM_SIZE = 3;
-    static final int IND_COMM_SIZE = 1000;
-    static final double PROB_OUT = 0.07;
+    private int COMM_SIZE;
+    private int IND_COMM_SIZE;
+    private double PROB_OUT;
     private Agent[] pop;
     Random r;
 
@@ -41,7 +41,27 @@ public class Population {
 
     private int day;
     private int simLength;
-    public Population(int days, int popSize, double G0, double Y, double Ysd, double S, double Ssd, int iN, int rN){
+
+    public Population(int days, int popSize, double G0, double Y, double Ysd, double S, double Ssd, int totalInfectedInit,
+                      int removedInit, int commSize, int outerCommSize, double outerCommProb){
+        this(days, popSize, G0, Y, Ysd, S, Ssd, totalInfectedInit, removedInit, false);
+        COMM_SIZE = commSize;
+        IND_COMM_SIZE = outerCommSize;
+        PROB_OUT = removedInit;
+    }
+
+    public Population(int days, int popSize, double G0, double Y, double Ysd, double S, double Ssd, int totalInfectedInit,
+               int removedInit){
+        this(days, popSize, G0, Y, Ysd, S, Ssd, totalInfectedInit, removedInit, true);
+    }
+
+    private Population(int days, int popSize, double G0, double Y, double Ysd, double S, double Ssd, int totalInfectedInit,
+                      int removedInit, boolean setFinal){
+        if (setFinal){
+            COMM_SIZE = 4;
+            IND_COMM_SIZE = 1000;
+            PROB_OUT = 0.07;
+        }
         this.Y = new double[]{Y, Ysd};
         this.S = new double[]{S, Ssd};
         this.D = new double[]{S + Y, Math.sqrt(Math.pow(Ysd, 2) + Math.pow(Ssd, 2))};
@@ -66,11 +86,11 @@ public class Population {
         this.simLength = days;
         R[0] = Math.pow(G0, S);
         G[0] = G0;
-        totalInfections[0] = iN;
-        activeCases[0] = iN-rN;
+        totalInfections[0] = totalInfectedInit;
+        activeCases[0] = totalInfectedInit-removedInit;
         printDay();
         r = new Random();
-        initInfectedAndRemoved(iN, rN);
+        initInfectedAndRemoved(totalInfectedInit, removedInit);
         shufflePop();
 
         for (int i = 0; i < pop.length; i++) {
