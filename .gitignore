@@ -1,6 +1,4 @@
 .idea
 gradle
 .gradle
-outputs/*
-
-!outputs/NYC/*
+outputs/plots

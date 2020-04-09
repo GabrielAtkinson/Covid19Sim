@@ -185,7 +185,7 @@ public class Population {
                 true, true, false
         );
 
-        File imageFile = new File(String.format("./outputs/Sim%.2f_%d_%d-%d_%d_%.2f.png", G[0], pop.length, COMM_SIZE, IND_COMM_SIZE, currentDay(), PROB_OUT));
+        File imageFile = new File(String.format("./outputs/plots/Sim%.2f_%d_%d-%d_%d_%.2f.png", G[0], pop.length, COMM_SIZE, IND_COMM_SIZE, currentDay(), PROB_OUT));
         int width = 640;
         int height = 480;
 
