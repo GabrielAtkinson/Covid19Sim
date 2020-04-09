@@ -26,7 +26,22 @@ will attempt to expose a randomly selected agent from the community.
 - no two communities are or isolation groups are identical
 
 ##Parameters
-1. 
+
+1. G0 base growth rate such that Cases<sub>t+n</sub> = Cases<sub>t</sub> G0<sup>n</sup>
+2. Isolation Group Size
+3. Community Size
+4. Probability an infected agent containing their infection within the isolation group 
+- The following as observed from a Weibull distribution
+5. Incubation Duration mean (default 5.8 days)
+6. Incubation Duration standard deviation (default 2.8 days)
+7. Symptom Onset To Isolation Duration mean (default 3.4 days)
+8. Symptom Onset To Isolation Duration standard deviation (default 4.4 days)
+
+## Other inputs
+1. Population size
+2. Days to simulate
+3. Initial total cases
+4. Initial removed cases
 
 ##Interpretation
 
