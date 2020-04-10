@@ -52,13 +52,33 @@ a worst case scenario. What is the most likely proportion of actual cases to con
 in first few simulated days. It will be important to tune this further.
 
 ## An Interpretation
+*figure 1.*
+![](./outputs/NYC/NYC_AS_NORMAL.png)
+*figure 2.*
+![](outputs/NYC/NYC_SOCIAL_ISO.png)
+*figure 3*
+![](outputs/NYC/NYC_NEAR_QUARANTINE.png)
+
+The figures above display predictions for NYC in three different scenarios, with a lower bound base growth rate of 1.20:
+- figure 1. **Business as usual** (G<sub>0</sub> = 1.20, Isolation size = 100, outer community = 1000, P<sub>iso</sub> = 0.95)
+- figure 2. **Social Distancing** (G<sub>0</sub> = 1.20, Isolation size = 4, outer community = 1000, P<sub>iso</sub> = 0.95)
+- figure 2. **Social Distancing** (G<sub>0</sub> = 1.20, Isolation size = 4, outer community = 100, P<sub>iso</sub> = 0.998)
+
+Based on the predictions returning to business as usual is simply not an option. How NYC is to proceed depends entirely on
+the capacity of their hospitals; unfortunately as of March 30<sup>th</sup> the city only had 20 000 total hospital beds,
+approximately 2000 beds less than the amount of COVID-19 patients requiring hospitalisation at the peak under a 'Near Quarantine'
+scenario. Without question there must be serious and immediate action taken, the mismanagement by federal and state 
+governments out of fear of economic shutdown have already eliminated any possibility of an economic restart within the 
+next quarter, any premature action will further increase unemployment, endanger lives, and decrease GDP. The decision is
+black and white: a full quarantine is required.  
 
 # References
 1. Du Z, Xu X, Wu Y, Wang L, Cowling BJ, Ancel Meyers L (2020). Serial interval of COVID-19 among publicly reported 
 confirmed cases. *Emerg Infect Dis, CDC*. 26(6). doi:10.3201/eid2606.200357. 
 2. Lauer SA, Grantz KH, et al. (2020), The Incubation Period of Coronavirus Disease 2019 (COVID-19) From Publicly 
 Reported Confirmed Cases: Estimation and Application, *Annals of Internal Medicine*, doi:10.1101/2020.02.02.20020016.
-3. Linton, NM, Kobayashi T, Yang Y, et al. (2020). Incubation Period and Other Epidemiological Caracteristics of 2019
+3. Linton, NM, Kobayashi T, Yang Y, et al. (2020). Incubation Period and Other Epidemiological Characteristics of 2019
 Novel Coronavirus Infections with Right Truncation: A Statistical Analysis of Publicly Available Case Data. 
 *Journal of Clinical Medicine*, 9, 538. doi:10.3390/jcm9020538.
+4. Lucking, L (2020). New York City welcomes more hospital beds, but still need many more. *Market Watch, March 30th, 2020*. https://www.marketwatch.com/story/new-york-city-welcomes-more-hospital-beds-but-still-needs-many-more-2020-03-30
 
