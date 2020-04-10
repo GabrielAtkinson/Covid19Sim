@@ -52,17 +52,17 @@ a worst case scenario. What is the most likely proportion of actual cases to con
 in first few simulated days. It will be important to tune this further.
 
 ## An Interpretation
-<p>
+
 *figure 1.*
- </p>
+ 
 ![](outputs/NYC/NYC_AS_NORMAL.png)
-<p>
+
 *figure 2.*
- </p>
+ 
 ![](outputs/NYC/NYC_SOCIAL_ISO.png)
-<p>
+
 *figure 3*
- </p>
+ 
 ![](outputs/NYC/NYC_NEAR_QUARANTINE.png)
 
 The figures above display predictions for NYC in three different scenarios, with a lower bound base growth rate of 1.20:
