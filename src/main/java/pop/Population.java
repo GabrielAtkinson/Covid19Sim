@@ -167,30 +167,45 @@ public class Population {
     public void plot(){
 
         String chartTitle = "COVID-19 Sim";
-        String xAxisLabel = "Time";
+        String confTitle = "COVID-19 Sim Confirmed Cases";
+        String xAxisLabel = "Time (Days)";
         String yAxisLabel = "Cases";
 
         XYSeriesCollection dataset = new XYSeriesCollection();
+        XYSeriesCollection confDS = new XYSeriesCollection();
         XYSeries totalCasesSeries = new XYSeries("Total Cases");
         XYSeries activeCasesSeries = new XYSeries("Active Cases");
+        XYSeries confirmed = new XYSeries("Confirmed");
+        XYSeries cofAct = new XYSeries("Confirmed Active");
         for (int i = 0; i < day ; i++) {
             activeCasesSeries.add(i,activeCases[i]);
             totalCasesSeries.add(i, totalInfections[i]);
+            confirmed.add(i, totalInfections[i]*0.02);
+            cofAct.add(i, activeCases[i]*0.02);
         }
 
         dataset.addSeries(totalCasesSeries);
         dataset.addSeries(activeCasesSeries);
+        dataset.addSeries(confirmed);
+        confDS.addSeries(confirmed);
+        confDS.addSeries(cofAct);
         JFreeChart chart = ChartFactory.createXYLineChart(
                 chartTitle, xAxisLabel, yAxisLabel, dataset, PlotOrientation.VERTICAL,
                 true, true, false
         );
+        JFreeChart confChart = ChartFactory.createXYLineChart(
+                confTitle, xAxisLabel, yAxisLabel, confDS, PlotOrientation.VERTICAL,
+                true, true, false
+        );
 
         File imageFile = new File(String.format("./outputs/plots/Sim%.2f_%d_%d-%d_%d_%.2f.png", G[0], pop.length, COMM_SIZE, IND_COMM_SIZE, currentDay(), PROB_OUT));
+        File conf = new File(String.format("./outputs/plots/SimConf%.2f_%d_%d-%d_%d_%.2f.png", G[0], pop.length, COMM_SIZE, IND_COMM_SIZE, currentDay(), PROB_OUT));
         int width = 640;
         int height = 480;
 
         try {
             ChartUtilities.saveChartAsPNG(imageFile, chart, width, height);
+            ChartUtilities.saveChartAsPNG(conf, confChart, width, height);
         } catch (IOException ex) {
             System.err.println(ex);
         }
