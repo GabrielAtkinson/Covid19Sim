@@ -68,7 +68,7 @@ in first few simulated days. It will be important to tune this further.
 The figures above display predictions for NYC in three different scenarios, with a lower bound base growth rate of 1.20:
 - figure 1. **Business as usual** (G<sub>0</sub> = 1.20, Isolation size = 100, outer community = 1000, P<sub>iso</sub> = 0.95)
 - figure 2. **Social Distancing** (G<sub>0</sub> = 1.20, Isolation size = 4, outer community = 1000, P<sub>iso</sub> = 0.95)
-- figure 2. **Social Distancing** (G<sub>0</sub> = 1.20, Isolation size = 4, outer community = 100, P<sub>iso</sub> = 0.998)
+- figure 3. **Extreme Social Distancing** (G<sub>0</sub> = 1.20, Isolation size = 4, outer community = 100, P<sub>iso</sub> = 0.998)
 
 Based on the predictions returning to business as usual is simply not an option. How NYC is to proceed depends entirely on
 the capacity of their hospitals; unfortunately as of March 30<sup>th</sup> the city only had 20 000 total hospital beds,
@@ -78,13 +78,23 @@ governments out of fear of economic shutdown have already eliminated any possibi
 next quarter, any premature action will further increase unemployment, endanger lives, and decrease GDP. The decision is
 black and white: a full quarantine is required.  
 
+In light of the Santa Clara anti-body tests the simulation predicts a very different (and more positive) scenario for NYC. Under the assumtion that there are 50x more total cases than confirmed, levels of infection suggest strongly that NYC is at the tail end of their battle with coronavirus. The results below use the sollowing inputs:
+(G<sub>0</sub> = 1.30, Isolation size = 4, outer community = 1000, P<sub>iso</sub> = 0.9795)
+*figure 4*
+ 
+![](outputs/NYC/Total_sc_NYC.png)
+
+![](outputs/NYC/Conf_sc_NYC.png)
+
+
 # References
-1. Du Z, Xu X, Wu Y, Wang L, Cowling BJ, Ancel Meyers L (2020). Serial interval of COVID-19 among publicly reported 
+1. Bendavid, E., Mulaney, B., Sood, N., Shah, S., Ling, E., Bromley-Dulfano, R., … Bhattacharya, J. (2020). COVID-19 Antibody Seroprevalence in Santa Clara County, California. MedRxiv. https://doi.org/10.1101/2020.04.14.20062463
+2. Du Z, Xu X, Wu Y, Wang L, Cowling BJ, Ancel Meyers L (2020). Serial interval of COVID-19 among publicly reported 
 confirmed cases. *Emerg Infect Dis, CDC*. 26(6). doi:10.3201/eid2606.200357. 
-2. Lauer SA, Grantz KH, et al. (2020), The Incubation Period of Coronavirus Disease 2019 (COVID-19) From Publicly 
+4. Lauer SA, Grantz KH, et al. (2020), The Incubation Period of Coronavirus Disease 2019 (COVID-19) From Publicly 
 Reported Confirmed Cases: Estimation and Application, *Annals of Internal Medicine*, doi:10.1101/2020.02.02.20020016.
-3. Linton, NM, Kobayashi T, Yang Y, et al. (2020). Incubation Period and Other Epidemiological Characteristics of 2019
+5. Linton, NM, Kobayashi T, Yang Y, et al. (2020). Incubation Period and Other Epidemiological Characteristics of 2019
 Novel Coronavirus Infections with Right Truncation: A Statistical Analysis of Publicly Available Case Data. 
 *Journal of Clinical Medicine*, 9, 538. doi:10.3390/jcm9020538.
-4. Lucking, L (2020). New York City welcomes more hospital beds, but still need many more. *Market Watch, March 30th, 2020*. https://www.marketwatch.com/story/new-york-city-welcomes-more-hospital-beds-but-still-needs-many-more-2020-03-30
+6. Lucking, L (2020). New York City welcomes more hospital beds, but still need many more. *Market Watch, March 30th, 2020*. https://www.marketwatch.com/story/new-york-city-welcomes-more-hospital-beds-but-still-needs-many-more-2020-03-30
 
